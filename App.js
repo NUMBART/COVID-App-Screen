@@ -22,30 +22,38 @@ export default function App() {
             <Text style={[{fontSize:17}]}>Hi {name}</Text>
           </View>
           <View style={styles.featureList}>
+            <View style={styles.feature}>
             <TouchableOpacity>
             <View style={styles.feature}>
               <QuestionnaireImg/>
               <Text style={[{fontSize:10}, {textAlign:'center'}]}>Self Screening Questionnaire</Text>
             </View>
             </TouchableOpacity>
+            </View>
+            <View style={styles.feature}>
             <TouchableOpacity>
             <View style={styles.feature}>
               <ReportImg/>
               <Text style={[{fontSize:10}, {textAlign:'center'}]}>COVID Test Reports</Text>
             </View>
             </TouchableOpacity>
+            </View>
+            <View style={styles.feature}>
             <TouchableOpacity>
             <View style={styles.feature}>
               <EditImg/>
               <Text style={[{fontSize:10}, {textAlign:'center'}]}>Edit Self Information</Text>
             </View>
             </TouchableOpacity>
+            </View>
+            <View style={styles.feature}>
             <TouchableOpacity>
             <View style={styles.feature}>
               <DaysImg/>
               <Text style={[{fontSize:10}, {textAlign:'center'}]}>Days left to next test</Text>
             </View>
             </TouchableOpacity>
+            </View>
           </View>
         </View>
 
