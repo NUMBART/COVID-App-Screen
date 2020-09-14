@@ -55,7 +55,11 @@ export default function App() {
         </View>
 
         <View style={styles.qrcodeContainer}>
-        <QRCode value="http://awesome.link.qr"/>
+        <QRCode 
+          value="http://awesome.link.qr" 
+          color='#08749E'
+          size={180}  
+        />
         </View>
       </View>
     </SafeAreaView>
@@ -100,6 +104,8 @@ const styles = StyleSheet.create({
   },
   qrcodeContainer: {
     flex: 3.90,
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: 'white'
   }
 });
