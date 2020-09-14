@@ -6,6 +6,7 @@ import ReportImg from './components/ReportImg'
 import EditImg from './components/EditImg'
 import DaysImg from './components/DaysImg'
 import GreenCirle from './components/GreenCircle'
+import Feature from './components/Feature'
 
 import QRCode from 'react-native-qrcode-svg';
 
@@ -22,38 +23,10 @@ export default function App() {
             <Text style={[{fontSize:17}]}>Hi {name}</Text>
           </View>
           <View style={styles.featureList}>
-            <View style={styles.feature}>
-            <TouchableOpacity>
-            <View style={styles.feature}>
-              <QuestionnaireImg/>
-              <Text style={[{fontSize:10}, {textAlign:'center'}]}>Self Screening Questionnaire</Text>
-            </View>
-            </TouchableOpacity>
-            </View>
-            <View style={styles.feature}>
-            <TouchableOpacity>
-            <View style={styles.feature}>
-              <ReportImg/>
-              <Text style={[{fontSize:10}, {textAlign:'center'}]}>COVID Test Reports</Text>
-            </View>
-            </TouchableOpacity>
-            </View>
-            <View style={styles.feature}>
-            <TouchableOpacity>
-            <View style={styles.feature}>
-              <EditImg/>
-              <Text style={[{fontSize:10}, {textAlign:'center'}]}>Edit Self Information</Text>
-            </View>
-            </TouchableOpacity>
-            </View>
-            <View style={styles.feature}>
-            <TouchableOpacity>
-            <View style={styles.feature}>
-              <DaysImg/>
-              <Text style={[{fontSize:10}, {textAlign:'center'}]}>Days left to next test</Text>
-            </View>
-            </TouchableOpacity>
-            </View>
+            <Feature icon={<QuestionnaireImg/>} title={"Self Screening Questionnaire"}/>
+            <Feature icon={<ReportImg/>} title={"COVID Test Reports"}/>
+            <Feature icon={<EditImg/>} title={"Edit Self Information"}/>
+            <Feature icon={<DaysImg/>} title={"Days left to next test"}/>
           </View>
         </View>
 
@@ -91,11 +64,6 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     alignContent: 'space-between',
-  },
-  feature: {
-    height: 80,
-    width: 70,
-    alignItems: 'center',
   },
   safeBarContainer: {
     flex: 1.1,
