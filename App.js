@@ -12,6 +12,7 @@ import QRCode from 'react-native-qrcode-svg';
 
 export default function App() {
   const [name, setName] = useState('John');
+  const [QRText, setQRText] = useState('https://github.com/NUMBART/COVID-App-Screen');
 
   return (
     <SafeAreaView style={styles.container}>
@@ -37,9 +38,9 @@ export default function App() {
 
         <View style={styles.qrcodeContainer}>
         <QRCode 
-          value="http://awesome.link.qr" 
+          value={QRText}
           color='#08749E'
-          size={180}  
+          size={180}
         />
         </View>
       </View>
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
     alignContent: 'space-between',
   },
   safeBarContainer: {
-    flex: 1.1,
+    flex: 1,
     padding: 10,
     flexDirection: 'row',
     alignItems: 'center',
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
     fontSize: 17
   },
   qrcodeContainer: {
-    flex: 3.90,
+    flex: 4,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white'
