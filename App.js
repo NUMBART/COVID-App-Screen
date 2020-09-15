@@ -12,21 +12,31 @@ import QRCode from 'react-native-qrcode-svg';
 
 export default function App() {
   const [name, setName] = useState('John');
+  const [features, setFeatures] = useState([
+    {icon: <QuestionnaireImg/>, title: "Self Screening Questionnaire"},
+    {icon: <ReportImg/>, title: "COVID Test Reports"},
+    {icon: <EditImg/>, title: "Edit Self Information"},
+    {icon: <DaysImg/>, title: "Days left to next test"}
+  ]);
+  
+  let featureSet=(
+    <View style={styles.featureList}>
+      {features.map(feature => {
+        return <Feature icon={feature.icon} title={feature.title}/>  
+      })}
+    </View>
+  );
 
   return (
     <SafeAreaView style={styles.container}>
       <Header/>
       <View style={[{flex:1}]}>
-
         <View style={styles.featureContainer}>
           <View style={[{flex:1}]}>
             <Text style={[{fontSize:17}]}>Hi {name}</Text>
           </View>
           <View style={styles.featureList}>
-            <Feature icon={<QuestionnaireImg/>} title={"Self Screening Questionnaire"}/>
-            <Feature icon={<ReportImg/>} title={"COVID Test Reports"}/>
-            <Feature icon={<EditImg/>} title={"Edit Self Information"}/>
-            <Feature icon={<DaysImg/>} title={"Days left to next test"}/>
+            {featureSet}
           </View>
         </View>
 
